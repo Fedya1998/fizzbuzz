@@ -3,10 +3,8 @@ compiler: gcc
 sudo: false
 
 script:
-  make clean
   make test
   ./test
-  rm test
   gcov fizzbuzz.c
 
 after_success:
