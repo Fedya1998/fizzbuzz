@@ -8,3 +8,5 @@ a.out
 fizzbuzz
 test
 cmake-build-debug/
+*.gcda
+*.gcno
