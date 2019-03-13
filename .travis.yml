@@ -1,7 +1,10 @@
 language: c
 compiler: gcc
 sudo: false
-
+os:
+  linux
+before_install:
+  - sudo pip install codecov
 addons:
   apt:
     packages: &1
