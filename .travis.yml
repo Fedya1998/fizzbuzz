@@ -4,10 +4,7 @@ sudo: false
 os:
   linux
 
-addons:
-  apt:
-    packages: &1
-      - lcov
+
 script:
   - make test
   - ./test

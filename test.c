@@ -48,5 +48,5 @@ int main(int argc, char ** argv) {
     }
 
     printf("Tested, passed %d tests of %d\n", successful_tests, TESTS_NUMBER);
-    return successful_tests;
+    return 0;
 }
