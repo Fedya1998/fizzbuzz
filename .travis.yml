@@ -4,10 +4,14 @@ sudo: false
 os:
   linux
 
+addons:
+  apt:
+    packages: &1
+      - lcov
 script:
-  make test
-  ./test
-  gcov fizzbuzz.c
+  - make test
+  - ./test
+  - gcov fizzbuzz.c
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
