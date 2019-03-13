@@ -5,13 +5,19 @@
 Takes number sequence and replaces each number with fizz, if can be divided by 3. With buzz, if can be divided by 5. With fizzbuzz if both.
 
 To run:
-```make
-./fizzbuzz```
+```bash
+make
+./fizzbuzz
+```
 
 Test:
-```make test
-./test```
+```
+make test
+./test
+```
 
 Clean:
-```make clean```
+```
+make clean
+```
 
