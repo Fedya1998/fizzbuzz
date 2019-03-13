@@ -1,0 +1,44 @@
+        -:    0:Source:fizzbuzz.c
+        -:    0:Graph:fizzbuzz.gcno
+        -:    0:Data:fizzbuzz.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://
+        -:    2:// Created by Fedya on 2019-03-13.
+        -:    3://
+        -:    4:
+        -:    5:#include "fizzbuzz.h"
+        -:    6:
+        -:    7:int fizzbuzz(char *str) {
+        -:    8:
+        7:    9:    int ret = 1;
+        7:   10:    ret *= inner_fizzbuzz(str);
+       17:   11:    if (ret != PIZDEC && (str[strlen(str) - 1] == '0' || str[strlen(str) - 1] == '5')) {
+        1:   12:        ret *= BUZZ;
+        1:   13:    }
+        7:   14:    return ret;
+        -:   15:}
+        -:   16:
+        -:   17:int inner_fizzbuzz(char * str) {
+        8:   18:    int div_by_3 = 0;
+        8:   19:    char new_str[20] = "";
+        8:   20:    if (strlen(str) > MAXIMUM_LENGTH){
+        1:   21:        errno = E2BIG;
+        1:   22:        return PIZDEC;
+        -:   23:    }
+       38:   24:    for (int i = 0; i < strlen(str); i++) {
+       26:   25:        if (str[i] < '0' || str[i] > '9') {
+        1:   26:            errno = EINVAL;
+        1:   27:            return PIZDEC;
+        -:   28:        }
+       12:   29:        div_by_3 += str[i] - '0';
+       12:   30:    }
+        6:   31:    if (div_by_3 < 10) {
+       17:   32:        if (div_by_3 == 0 || div_by_3 == 3 || div_by_3 == 6 || div_by_3 == 9)
+        4:   33:            return FIZZ;
+        -:   34:        else
+        1:   35:            return 1;
+        -:   36:    }
+        1:   37:    sprintf(new_str, "%i", div_by_3);
+        1:   38:    return inner_fizzbuzz(new_str);
+        8:   39:}

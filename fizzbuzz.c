@@ -37,13 +37,3 @@ int inner_fizzbuzz(char * str) {
     sprintf(new_str, "%i", div_by_3);
     return inner_fizzbuzz(new_str);
 }
-
-
-int fizzbuzz_test(char * str) {
-    return 0;
-}
-
-int inner_fizzbuzz_test(char * str) {
-    return 0;
-}
-

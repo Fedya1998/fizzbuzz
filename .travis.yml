@@ -3,4 +3,11 @@ compiler: gcc
 sudo: false
 
 script:
-  make
+  make clean
+  make test
+  ./test
+  rm test
+  gcov fizzbuzz.c
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

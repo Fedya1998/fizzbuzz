@@ -4,7 +4,7 @@
 
 #include "fizzbuzz.h"
 
-const int TESTS_NUMBER = 6;
+#define TESTS_NUMBER 7
 
 typedef struct test {
     char * str;
@@ -24,6 +24,7 @@ int main(int argc, char ** argv) {
             {"3", FIZZ, 0},
             {"15", BUZZ * FIZZ, 0},
             {"27", FIZZ, 0},
+            {"279", FIZZ, 0},
             {super_string, PIZDEC, E2BIG},
             {"2R", PIZDEC, EINVAL}
     };
@@ -35,7 +36,9 @@ int main(int argc, char ** argv) {
             printf("Testing a rather massive string... ");
         else
             printf("Testing %s... ", tests[i].str);
+
         int ret = fizzbuzz(tests[i].str);
+
         if (ret != tests[i].ret || errno != tests[i].error)
             printf("Failed!\n");
         else {
